@@ -1,0 +1,29 @@
+body {
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.board {
+  border: solid 1px black;
+  font-weight: bold;
+  font-size: 220%;
+}
+
+.board td {
+  text-align: center;
+  width: 1.6em;
+  height: 1.6em;
+}
+
+.msg {
+  padding: 1.1em;
+}
+
+.msg.success {
+  color: white;
+  background-color: lightgreen;
+}
+
+.msg.error {
+  color: white;
+  background-color: palevioletred;
+}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Boggle Game</title>
+    <link rel="stylesheet" href="/static/app.css" />
+  </head>
+  <body>
+    <h1>Let's Play Boggle!</h1>
+    <p>
+      From the board below, try to identify as many words as you can in the next
+      60 seconds. Enter a word you find in the form below and submit.
+    </p>
+    <form method="GET" action="/">
+      <button>Start Over</button>
+    </form>
+    <br />
+
+    <section id="boggle">
+      <table class="board">
+        <tbody>
+          {% for row in board %}
+          <tr>
+            {% for cell in row %}
+            <td>{{ cell }}</td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <p>
+        High Score:
+        <b>{{ highscore }}</b>
+        in {{ nplays }} plays
+      </p>
+
+      <p>Score: <b class="score">0</b> Seconds Left: <b class="timer"></b></p>
+
+      <form method="POST" class="add-word">
+        <input name="word" class="word" autofocus />
+        <button>Enter</button>
+      </form>
+
+      <!-- Words message will be displayed here when triggered in the JS -->
+      <p class="msg"></p>
+
+      <!-- Bullets with words will be added -->
+      <ul class="words">
+        <!-- our JS will words here as they score -->
+      </ul>
+    </section>
+    <script src="http://unpkg.com/jquery"></script>
+    <script src="https://unpkg.com/axios@0.19.0/dist/axios.js"></script>
+    <script src="/static/boggle.js"></script>
+    <script>
+      let game = new BoggleGame('boggle', 60);
+    </script>
+  </body>
+</html>
