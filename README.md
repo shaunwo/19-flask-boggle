@@ -5,4 +5,4 @@ For the player, the goal of the game is to get the highest point total. To gain 
 
 Enjoy!
 ## Instructions for Running Code
-This application is running on Flask. Start the Virtual Server in your local environment, and then run Flask. When you go to your local URL in your browser, you should be able to play the game in your browser.
+This application is running on Flask. Download the source files, start the Virtual Server in your local environment, and then run Flask. When you go to your local URL in your browser, you should be able to play the game in your browser.
